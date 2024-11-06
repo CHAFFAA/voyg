@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tailwind Pricing Table </title>
+	<meta name="author" content="David Grzyb">
+    <meta name="description" content="">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        /* Variables de couleur */
+        :root {
+            --color-dark-navy-blue: rgb(11, 39, 66);
+            --color-medium-blue: rgb(34, 100, 148);
+            --color-deep-blackish-blue: rgb(6, 20, 32);
+            --color-dark-teal-blue: rgb(22, 69, 108);
+            --color-light-blue: rgb(51, 138, 190);
+        }
+
+        body {
+            background: linear-gradient(135deg, 
+                                        var(--color-dark-navy-blue), 
+                                        var(--color-medium-blue), 
+                                        var(--color-dark-teal-blue), 
+                                        var(--color-light-blue));
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* Arrière-plan fixe */
+            min-height: 100vh; /* Au moins la hauteur de la fenêtre */ 
+            margin: 0;
+        }
+  
+        .active {
+          color: #8AE1E1;
+        }
+     
+      </style>
+</head>
+<body class="mx-auto bg-gray-100" style="font-family:'Lato',sans-serif;">
+
+    <div class="flex items-center justify-between w-full px-4 h-12">
+        <!-- Bouton Retour en haut à gauche -->
+        <button class="bg-teal-500 hover:bg-teal-600 text-white font-medium py-2 px-6 rounded-full ml-4" onclick="window.location.href='index.html'">
+            Back
+        </button>
+        
+        <div class="w-1/2 bg-gray-300 rounded-full h-4 overflow-hidden" style="margin-right: 25%;">
+            <div class="bg-black h-4 rounded-full" style="width: 50%;"></div>
+        </div>
+    </div>
+
+    <div class="text-center my-10">
+        <h1 class="font-bold text-3xl mb-2">Choose your plan</h1>
+    </div>
+    
+    
+    <div class="flex flex-col sm:flex-row px-2 md:px-0 justify-center items-center min-h-screen max-w-4xl mx-auto" style="margin-bottom: 50%;">
+       <!-- Monthly Plan Card -->
+        <div class="w-full sm:w-2/3 md:w-1/3 rounded-lg shadow transition duration-300 ease-in-out transform hover:scale-105 p-6 sm:mr-4 mb-10 sm:mb-0 min-h-[350px] flex flex-col justify-between text-white" style="background-color: blue;">
+            <h3 class="text-black font-bold text-lg">Monthly</h3>
+            <p class="mt-1"><span class="font-bold text-4xl text-white">$49</span> <span class="text-white">/Month</span></p>
+            <p class="text-sm mt-2 text-white">For most businesses that want to post their trips.</p>
+            <div class="text-sm mt-4">
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> 40 ads</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Own dashboard</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Chat support</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Optimize hashtags</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Total:49$</p>
+            </div>
+            <button onclick="window.location.href='index2.html'" class="w-full text-blue-700 bg-white bg-opacity-75 rounded hover:bg-blue-700 hover:text-white hover:-translate-y-1 transition duration-150 ease-in-out py-4 mt-4">Choose Plan</button>
+        </div>
+
+        <!-- Quarterly Plan Card -->
+        <div class="w-full sm:w-2/3 md:w-1/3 rounded-lg shadow transition duration-300 ease-in-out transform hover:scale-105 p-6 sm:mr-4 mb-10 sm:mb-0 min-h-[350px] flex flex-col justify-between text-white" style="background-color: teal;">
+            <h2 class="text-black font-bold text-lg">Quarterly</h2>
+            <p class="mt-1"><span class="font-bold text-4xl">$32</span> /Month</p>
+            <p class="text-sm mt-2 text-white">For most businesses that want to post their trips.</p>
+            <div class="text-sm mt-4">
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> 60 ads/month</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Own dashboard</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Chat support</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Optimize hashtags</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Total:117$</p>
+            </div>
+            <button onclick="window.location.href='index2.html'" class="w-full text-teal-700 bg-white bg-opacity-75 rounded hover:bg-teal-700 hover:text-white hover:-translate-y-1 transition duration-150 ease-in-out py-4 mt-4">Choose Plan</button>
+        </div>
+
+        <!-- Annually Plan Card -->
+        <div class="w-full sm:w-2/3 md:w-1/3 rounded-lg shadow transition duration-300 ease-in-out transform hover:scale-105 p-6 mb-10 sm:mb-0 min-h-[350px] flex flex-col justify-between text-white" style="background-color: rgb(205, 78, 181);">
+            <h1 class="text-black font-bold text-lg">Annually</h1>
+            <p class="mt-1"><span class="font-bold text-4xl text-white">$24</span> /Month</p>
+            <p class="text-sm mt-2 text-white">For most businesses that want to post their trips.</p>
+            <div class="text-sm mt-4">
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> 74 ads/month</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Own dashboard</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Chat support</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Optimize hashtags</p>
+                <p class="my-2"><span class="fa fa-check-circle mr-2 ml-1"></span> Total:300$</p>
+            </div>
+            <button onclick="window.location.href='index2.html'" class="w-full text-pink-700 bg-white bg-opacity-75 rounded hover:bg-pink-700 hover:text-white hover:-translate-y-1 transition duration-150 ease-in-out py-4 mt-4">Choose Plan</button>
+    </div>
+
+    
+</body>
+</html>

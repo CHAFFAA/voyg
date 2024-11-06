@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LeVoyageur - Add New Trip</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --color-dark-navy-blue: rgb(11, 39, 66);
+      --color-medium-blue: rgb(34, 100, 148);
+      --color-deep-blackish-blue: rgb(6, 20, 32);
+      --color-dark-teal-blue: rgb(22, 69, 108);
+      --color-light-blue: rgb(51, 138, 190);
+      --color-button-blue: #1C4B6D;
+    }
+
+    body {
+      background: linear-gradient(to bottom, 
+                                  var(--color-dark-navy-blue), 
+                                  var(--color-medium-blue), 
+                                  var(--color-dark-teal-blue), 
+                                  var(--color-light-blue));
+      min-height: 100vh;
+    }
+
+    .custom-bg {
+      background-color: rgba(243, 243, 243, 0.4);
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .custom-input {
+      background: linear-gradient(to right, #0d4e5a, #127f83);
+      color: white;
+      border-radius: 10px;
+    }
+
+    .custom-button {
+      background: linear-gradient(to right, #0d4e5a, #127f83);
+      border-radius: 20px;
+      color: white;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    nav {
+      background: linear-gradient(to right, #0d4e5a, #127f83);
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav a {
+      color: white;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #8AE1E1;
+    }
+
+    .nav-icon {
+      background-color: rgba(59, 59, 59, 0.1);
+      padding: 0.5rem;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-icon:hover {
+      background-color: #8AE1E1;
+    }
+
+    .active {
+      color: #8AE1E1;
+    }
+
+    .form-section {
+      background-color: rgba(82, 96, 96, 0.9);
+      border-radius: 20px;
+      padding: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .form-group label {
+      min-width: 90px;
+      color: #E0E0E0;
+    }
+
+    .icon {
+      color: #A9BAC5;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="flex flex-col">
+    <div class="flex items-center justify-between text-white w-full">  
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+          <img src="img/voyageur.png" alt="Logo" class="logo">
+        </div>
+  
+        <div class="hidden sm:flex space-x-6 text-lg">
+          <a href="#" class="hover:text-teal-400">Home</a>
+          <a href="#" class="hover:text-teal-400">My Subscription</a>
+          <a href="index2.html" class="hover:text-teal-400 active">Dashboard</a>
+          <a href="#" class="hover:text-teal-400">Support</a>
+        </div>
+      
+      <!-- User Icons and Mobile Menu Button -->
+      <div class="flex items-center space-x-4">
+        <button class="nav-icon text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+        </button>
+        <button class="nav-icon text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6 6 0 10-12 0v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+          </svg>
+        </button>
+        <img src="img/profil.png" alt="User" class="w-10 h-10 rounded-full border border-gray-300">
+        <button class="sm:hidden" id="menu-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  
+    <div id="mobile-menu" class="sm:hidden hidden text-white w-full z-50 mt-4">
+      <div class="flex flex-col space-y-4 p-4 text-lg">
+        <a href="#" class="hover:text-teal-400">Home</a>
+        <a href="#" class="hover:text-teal-400">My Subscription</a>
+        <a href="#" class="hover:text-teal-400 active">Dashboard</a>
+        <a href="#" class="hover:text-teal-400">Support</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="p-8 flex justify-center items-center">
+    <div class="custom-bg w-full max-w-5xl p-6 flex flex-col md:flex-row items-center gap-6">
+      <div class="w-full md:w-1/2 flex justify-center">
+        <img src="img/triip.webp" alt="Trip illustration" class="rounded-lg shadow-md w-full h-max">
+      </div>
+
+      <div class="form-section w-full md:w-1/2 space-y-4">
+        <h1 class="text-white text-3xl font-bold text-center mb-4">ADD NEW TRIP</h1>
+        
+        <!-- Form Inputs with Icons -->
+        <div class="form-group">
+          <label for="start">Start</label>
+          <span class="icon">
+            <img src="https://img.icons8.com/ios-filled/50/000000/place-marker.png" alt="Start Icon" class="h-6 w-6">
+          </span>
+          <input type="text" id="start" class="custom-input w-full px-4 py-2 rounded focus:outline-none" placeholder="Enter start location">
+        </div>
+        
+        <div class="form-group">
+          <label for="destination">Destination</label>
+          <span class="icon">
+            <img src="https://img.icons8.com/ios-filled/50/000000/marker.png" alt="Destination Icon" class="h-6 w-6">
+          </span>
+          <input type="text" id="destination" class="custom-input w-full px-4 py-2 rounded focus:outline-none" placeholder="Enter destination">
+        </div>
+        
+        <div class="form-group">
+          <label for="period">Period</label>
+          <span class="icon">
+            <img src="https://img.icons8.com/ios-filled/50/000000/calendar.png" alt="Period Icon" class="h-6 w-6">
+          </span>
+          <input type="text" id="period" class="custom-input w-full px-4 py-2 rounded focus:outline-none" placeholder="Enter period">
+        </div>
+        
+        <div class="form-group">
+          <label for="people">Nb. People</label>
+          <span class="icon">
+            <img src="https://img.icons8.com/ios-filled/50/000000/conference.png" alt="People Icon" class="h-6 w-6">
+          </span>
+          <input type="number" id="people" class="custom-input w-full px-4 py-2 rounded focus:outline-none" placeholder="Enter number of people">
+        </div>
+        
+        <div class="form-group">
+          <label for="price">Price</label>
+          <span class="icon">
+            <img src="https://img.icons8.com/ios-filled/50/000000/money.png" alt="Price Icon" class="h-6 w-6">
+          </span>
+          <input type="text" id="price" class="custom-input w-full px-4 py-2 rounded focus:outline-none" placeholder="Enter price">
+        </div>
+        
+        <div class="form-group">
+          <label for="description">Description</label>
+          <span class="icon">
+            <img src="https://img.icons8.com/ios-filled/50/000000/edit.png" alt="Description Icon" class="h-6 w-6">
+          </span>
+          <input type="text" id="description" class="custom-input w-full px-4 py-2 rounded focus:outline-none" placeholder="Enter description">
+        </div>
+        
+        <div class="form-group">
+          <label for="article">Article</label>
+          <div class="relative w-full">
+            <!-- Input caché pour le fichier -->
+            <input type="file" id="article" class="file-input hidden">
+            
+            <!-- Label personnalisé agissant comme un bouton -->
+            <label for="article" class="custom-input w-full flex items-center justify-center cursor-pointer px-4 py-2 rounded">
+              <img src="https://img.icons8.com/ios-filled/50/000000/file.png" alt="Attach File Icon" class="h-6 w-6 mr-2">
+              <span class="text-white">Choisir un fichier</span>
+            </label>
+          </div>
+        </div>
+        
+        <button class="custom-button w-full font-bold py-2 rounded mt-4 hover:opacity-90">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('menu-btn').addEventListener('click', function () {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
